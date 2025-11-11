@@ -1,13 +1,13 @@
-package com.github._g4b.Springboot_Project_Template;
+package team.cobblestone.gikipedia.server.v1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringbootProjectTemplateApplication {
+public class GikipediaApplication {
 
     static void main(String[] args) {
-        SpringApplication.run(SpringbootProjectTemplateApplication.class, args);
+        SpringApplication.run(GikipediaApplication.class, args);
     }
 
 }

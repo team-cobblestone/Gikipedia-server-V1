@@ -1,1 +1,1 @@
-rootProject.name = "Springboot-Project-Template"
+rootProject.name = "Gikipedia-server-V1"

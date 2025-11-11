@@ -1,10 +1,10 @@
-package com.github._g4b.Springboot_Project_Template;
+package team.cobblestone.gikipedia.server.v1;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringbootProjectTemplateApplicationTests {
+class GikipediaApplicationTests {
 
     @Test
     void contextLoads() {
