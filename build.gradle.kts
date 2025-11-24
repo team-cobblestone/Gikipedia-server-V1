@@ -6,7 +6,7 @@ plugins {
 }
 val springCloudVersion by extra("2025.1.0-M4")
 
-group = "com.github.8g4b"
+group = "team.cobblestone.gikipedia.server.v1"
 version = "1.0"
 
 spotless {
