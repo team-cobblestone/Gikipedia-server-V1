@@ -56,7 +56,8 @@ public class CachedBodyRequestWrapper extends HttpServletRequestWrapper {
 
     @Override
     public BufferedReader getReader() {
-        Charset charset = getCharacterEncoding() != null ? Charset.forName(getCharacterEncoding())
+        Charset charset = getCharacterEncoding() != null
+                ? Charset.forName(getCharacterEncoding())
                 : StandardCharsets.UTF_8;
         return new BufferedReader(new InputStreamReader(getInputStream(), charset));
     }

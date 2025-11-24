@@ -14,16 +14,11 @@ public class SwaggerConfig {
 
     @Bean
     public OpenAPI openAPI() {
-        return new OpenAPI()
-                .info(apiInfo())
-                .addSecurityItem(securityRequirement())
-                .components(components());
+        return new OpenAPI().info(apiInfo()).addSecurityItem(securityRequirement()).components(components());
     }
 
     private Info apiInfo() {
-        return new Info()
-                .title("Gikipedia API")
-                .description("Gikipedia Wiki System REST API Documentation")
+        return new Info().title("Gikipedia API").description("Gikipedia Wiki System REST API Documentation")
                 .version("1.0.0");
     }
 
@@ -32,12 +27,8 @@ public class SwaggerConfig {
     }
 
     private Components components() {
-        return new Components()
-                .addSecuritySchemes("bearerAuth",
-                        new SecurityScheme()
-                                .type(SecurityScheme.Type.HTTP)
-                                .scheme("bearer")
-                                .bearerFormat("JWT"));
+        return new Components().addSecuritySchemes("bearerAuth",
+                new SecurityScheme().type(SecurityScheme.Type.HTTP).scheme("bearer").bearerFormat("JWT"));
     }
 
 }
