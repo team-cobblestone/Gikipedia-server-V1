@@ -38,6 +38,9 @@ spring:
       password: ${REDIS_PASSWORD:}
       ssl:
         enabled: false
+  docker:
+    compose:
+      enabled: true
 server:
   port: 8080
   compression:
