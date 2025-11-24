@@ -26,13 +26,13 @@ public class JwtTokenProvider {
 
     private final UserDetailsService userDetailsService;
 
-    @Value("${jwt.secret}")
+    @Value("${spring.security.jwt.secret}")
     private String secretKey;
 
-    @Value("${jwt.expiration}")
+    @Value("${spring.security.jwt.expiration}")
     private long tokenValidityInMilliseconds;
 
-    @Value("${jwt.refresh-expiration}")
+    @Value("${spring.security.jwt.refresh-expiration}")
     private long refreshTokenValidityInMilliseconds;
 
     private SecretKey key;
