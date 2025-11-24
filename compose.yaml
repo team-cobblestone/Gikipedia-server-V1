@@ -1,14 +1,43 @@
 services:
   mysql:
-    image: 'mysql:latest'
+    image: 'mysql:8.0'
+    container_name: gikipedia-mysql
     environment:
-      - 'MYSQL_DATABASE=mydatabase'
-      - 'MYSQL_PASSWORD=secret'
-      - 'MYSQL_ROOT_PASSWORD=verysecret'
-      - 'MYSQL_USER=myuser'
+      - 'MYSQL_DATABASE=gikipedia'
+      - 'MYSQL_PASSWORD=gikipedia'
+      - 'MYSQL_ROOT_PASSWORD=rootpassword'
+      - 'MYSQL_USER=gikipedia'
     ports:
-      - '3306'
+      - '3306:3306'
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - gikipedia-network
+
   redis:
-    image: 'redis:latest'
+    image: 'redis:7-alpine'
+    container_name: gikipedia-redis
     ports:
-      - '6379'
+      - '6379:6379'
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - gikipedia-network
+
+volumes:
+  mysql_data:
+  redis_data:
+
+networks:
+  gikipedia-network:
+    driver: bridge
